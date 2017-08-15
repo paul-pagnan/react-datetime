@@ -150,14 +150,8 @@ var Datetime = createClass({
 			formats.datetime !== this.getFormats( this.props ).datetime ) {
 			updatedState = this.getStateFromProps( nextProps );
 		}
-
-		if ( updatedState.open === undefined ) {
-			if ( this.props.closeOnSelect && this.state.currentView !== 'time' ) {
-				updatedState.open = false;
-			} else {
-				updatedState.open = nextProps.open;
-			}
-		}
+		
+		updatedState.open = nextProps.open;
 
 		if ( nextProps.viewMode !== this.props.viewMode ) {
 			updatedState.currentView = nextProps.viewMode;
